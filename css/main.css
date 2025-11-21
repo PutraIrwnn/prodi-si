@@ -1,0 +1,343 @@
+/* Global Styles & Typography */
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-gray-800);
+  background-color: var(--color-white);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-4);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+}
+h2 {
+  font-size: var(--text-4xl);
+}
+h3 {
+  font-size: var(--text-3xl);
+}
+h4 {
+  font-size: var(--text-2xl);
+}
+h5 {
+  font-size: var(--text-xl);
+}
+h6 {
+  font-size: var(--text-lg);
+}
+
+p {
+  margin-bottom: var(--space-4);
+  color: var(--color-gray-600);
+  line-height: 1.7;
+}
+
+/* Container */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Section Spacing */
+.section {
+  padding: var(--space-20) 0;
+}
+
+.section-alt {
+  background-color: var(--color-gray-50);
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+
+.mb-12 {
+  margin-bottom: var(--space-12);
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 64, 175, 0.92) 0%,
+    rgba(14, 165, 233, 0.85) 50%,
+    rgba(139, 92, 246, 0.78) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 var(--space-4);
+  opacity: 0;
+  animation: heroFadeIn 1s ease-out 0.3s forwards;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: var(--space-6);
+  color: var(--color-white);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: titleSlideIn 0.8s ease-out 0.5s both;
+}
+
+@keyframes titleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-8);
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.8;
+  animation: subtitleSlideIn 0.8s ease-out 0.7s both;
+}
+
+@keyframes subtitleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: buttonsSlideIn 0.8s ease-out 0.9s both;
+}
+
+@keyframes buttonsSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid Layouts - FIXED: Force 4 columns horizontal */
+.keunggulan-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.profil-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.prospek-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+/* Responsive - Tablet: 2 columns */
+@media (max-width: 1200px) {
+  .keunggulan-grid,
+  .profil-grid,
+  .prospek-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive - Mobile: 1 column */
+@media (max-width: 768px) {
+  .keunggulan-grid,
+  .profil-grid,
+  .prospek-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 1024px) {
+  .keunggulan-grid,
+  .profil-grid,
+  .prospek-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--text-4xl);
+  }
+  h2 {
+    font-size: var(--text-3xl);
+  }
+  h3 {
+    font-size: var(--text-2xl);
+  }
+
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  .hero {
+    height: 80vh;
+    min-height: 500px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .keunggulan-grid,
+  .profil-grid,
+  .prospek-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================== CUSTOM SCROLLBAR (Auto-Hiding) ==================== */
+
+/* --- Universal Scrollbar Styling (for Firefox) --- */
+html {
+  scrollbar-width: thin; /* Makes scrollbar thinner in Firefox */
+  scrollbar-color: var(--color-gray-400) transparent; /* thumb & track */
+}
+
+/* --- Advanced Scrollbar Styling (for Chrome, Edge, Safari) --- */
+
+/* The entire scrollbar. Make it thin. */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* The track (the background). Make it transparent. */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* The thumb (the draggable part). Transparent by default. */
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent; /* Prevents shrinking on background-clip */
+  background-clip: content-box; /* The background color will not extend into the border */
+}
+
+/* When the user's mouse is anywhere over the page, the scrollbar thumb appears. */
+body:hover::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-400);
+}
+
+/* When the user hovers directly over the thumb, make it darker. */
+body:hover::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-gray-500);
+}
