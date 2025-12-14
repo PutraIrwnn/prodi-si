@@ -3,114 +3,141 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Program Studi Sistem Informasi Fakultas Ilmu Komputer UBP Karawang - Akreditasi Unggul, Mencetak Lulusan IT yang Kompeten dan Inovatif"
-    />
-    <title>Prodi Sistem Informasi - FIK UBP Karawang</title>
+    <meta name="theme-color" content="#2563eb" />
+    <title>Sistem Informasi - UBP Karawang</title>
+    <link rel="shortcut icon" href="images/logo-ubp.png" type="image/x-icon">
 
-    <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#1e40af" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="SI UBP" />
-
-    <!-- PWA Icons -->
-    <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/images/icons/icon-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="/images/icons/icon-512x512.png"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
     />
 
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/components.css" />
+    <!-- Styles - v30 for Cache Busting -->
+    <link rel="stylesheet" href="css/variables.css?v=30" />
+    <link rel="stylesheet" href="css/reset.css?v=30" />
+    <link rel="stylesheet" href="css/components.css?v=30" />
+    <link rel="stylesheet" href="css/main.css?v=30" />
+    <link rel="stylesheet" href="css/pages.css?v=30" />
+    
+    <!-- PWA Helper -->
+    <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <!-- ==================== NAVBAR ==================== -->
+    <!-- Preloader (REDESIGNED) -->
+    <div class="preloader" id="preloader">
+      <div class="loader-content">
+        <img src="images/logo-ubp.png" alt="UBP Logo" class="loader-logo" />
+        <div class="loader-ring"></div>
+      </div>
+      <div class="loading-text">SYSTEM INITIALIZING...</div>
+    </div>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
       <div class="navbar-container">
-        <div class="navbar-logo">
-          <img src="images/logo-ubp.png" alt="Logo UBP" />
+        <a href="#" class="navbar-logo">
+          <img src="images/logo-ubp.png" alt="UBP Logo" />
           <img src="images/logo-fik.png" alt="Logo FIK" />
-        </div>
+        </a>
+        
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
 
         <ul class="navbar-menu" id="navbarMenu">
-          <li><a href="index.html" class="navbar-link active">Home</a></li>
+          <li><a href="index.html" class="navbar-link active">Beranda</a></li>
           <li><a href="tentang.html" class="navbar-link">Tentang</a></li>
-          <li><a href="kurikulum.html" class="navbar-link">Kurikulum</a></li>
           <li><a href="dosen.html" class="navbar-link">Dosen</a></li>
           <li><a href="kontak.html" class="navbar-link">Kontak</a></li>
         </ul>
-
-        <div class="navbar-toggle" id="navbarToggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
       </div>
     </nav>
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero">
       <div class="hero-background">
-        <img src="images/hero-campus.jpg" alt="UBP Karawang Campus" />
+        <img src="images/hero-campus.jpg" alt="Gedung Kampus UBP" />
       </div>
       <div class="hero-overlay"></div>
-
+      
       <div class="hero-content">
-        <h1 class="hero-title">Program Studi Sistem Informasi</h1>
+        <div class="hero-badge">Fakultas Ilmu Komputer</div>
+        <h1 class="hero-title">
+          <span class="gradient-text">SISTEM INFORMASI</span>
+        </h1>
         <p class="hero-subtitle">
-          Mencetak Lulusan IT yang Kompeten, Inovatif, dan Siap Menghadapi Era
-          Digital di Fakultas Ilmu Komputer UBP Karawang
+          Membangun masa depan digital dengan keahlian teknologi terkini, analisis data, dan manajemen bisnis modern.
         </p>
-
+        
         <div class="hero-buttons">
-          <a href="tentang.html" class="btn btn-primary"
-            >Pelajari Lebih Lanjut</a
+          <a href="https://penmabar.ubpkarawang.ac.id/" target="_blank" class="btn btn-primary btn-magnetic"
+            >Daftar Sekarang</a
           >
-          <a href="kontak.html" class="btn btn-secondary">Hubungi Kami</a>
+          <a href="tentang.html" class="btn btn-secondary btn-magnetic">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <!-- Desktop Mouse -->
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        
+        <!-- Mobile Phone Scroll Animation -->
+        <div class="field-phone">
+            <div class="phone-ani"></div>
+        </div>
+
+        <div class="arrow-scroll">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </section>
 
-    <!-- ==================== INTRO SECTION ==================== -->
+    <!-- ==================== VISI SECTION (Simplified) ==================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="visi-box text-center">
+          <h3 class="mb-4">Visi Program Studi</h3>
+          <p class="mb-8" style="font-size: 1.25rem;">
+            "Terwujudnya Program Studi Sistem Informasi yang Berwawasan
+            Kebangsaan dan Bereputasi Internasional pada bidang analisis data"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INTRO SECTION (SPLIT LAYOUT) ==================== -->
+    <!-- Hook: Confused Student (Putra-1) -->
     <section class="section">
       <div class="container">
-        <div class="text-center">
-          <h2>Tentang Program Studi Sistem Informasi</h2>
-          <p style="max-width: 800px; margin: 0 auto">
-            Program Studi Sistem Informasi Fakultas Ilmu Komputer UBP Karawang
-            dirancang untuk menghasilkan lulusan yang mampu merancang,
-            mengembangkan, dan mengelola sistem informasi berbasis teknologi
-            terkini. Dengan kurikulum yang terintegrasi antara teori dan
-            praktik, mahasiswa dibekali keterampilan teknis serta pemahaman
-            mendalam tentang kebutuhan bisnis dan organisasi.
-          </p>
-          <br />
-          <p style="max-width: 800px; margin: 0 auto">
-            Kami berkomitmen untuk menghadirkan pendidikan berkualitas yang
-            didukung oleh dosen berpengalaman, fasilitas Laboratorium Komputer,
-            dan kemitraan dengan industri. Lulusan Program Studi Sistem
-            Informasi tidak hanya siap bekerja, tetapi juga mampu berinovasi dan
-            berkontribusi dalam perkembangan teknologi informasi di Indonesia.
-          </p>
+        <!-- Updated to use Responsive Grid -->
+        <div class="profile-split">
+          <!-- Text Left -->
+          <div>
+            <h2>Apa itu Sistem Informasi?</h2>
+            <p class="mb-4" style="font-size: 1.1rem; color: var(--color-slate-600);">
+              Masih bingung mau pilih jurusan apa? Atau penasaran apa bedanya Sistem Informasi dengan Teknik Informatika?
+            </p>
+            <p class="mb-8">
+              Di <strong>Sistem Informasi</strong>, kamu tidak hanya belajar <em>coding</em>, tapi juga bagaimana teknologi bisa memberikan solusi nyata untuk bisnis. Kami menggabungkan ilmu komputer dengan manajemen, analisis data, dan strategi digital.
+            </p>
+            <a href="tentang.html" class="btn btn-outline">Baca Selengkapnya</a>
+          </div>
+
+          <!-- Image Right (Putra-1) -->
+          <div class="person-img-container" style="height: 600px;">
+            <img src="images/mahasiswa/putra-1.png" alt="Mahasiswa Bingung" class="person-img" style="max-width: 100%; transform: translateY(-50px);" />
+            <!-- Speech Bubble -->
+            <div class="speech-bubble" style="top: -7%; right: -10%; left: auto;">Apa itu Sistem Informasi? 🤔</div>
+          </div>
         </div>
       </div>
     </section>
@@ -119,27 +146,27 @@
     <section class="stats-section">
       <div class="container">
         <div class="stats-grid">
-          <div class="stat-card" style="animation-delay: 0.1s">
+          <div class="stat-card">
             <div class="stat-icon">⭐</div>
             <div class="stat-number">UNGGUL</div>
             <div class="stat-label">Akreditasi BAN-PT</div>
           </div>
 
-          <div class="stat-card" style="animation-delay: 0.2s">
+          <div class="stat-card">
             <div class="stat-icon">📅</div>
-            <div class="stat-number">2014</div>
+            <div class="stat-number" data-value="2014">2014</div>
             <div class="stat-label">Tahun Berdiri</div>
           </div>
 
-          <div class="stat-card" style="animation-delay: 0.3s">
+          <div class="stat-card">
             <div class="stat-icon">👥</div>
-            <div class="stat-number">15</div>
+            <div class="stat-number" data-value="15">15</div>
             <div class="stat-label">Dosen Pengajar</div>
           </div>
 
-          <div class="stat-card" style="animation-delay: 0.4s">
+          <div class="stat-card">
             <div class="stat-icon">💼</div>
-            <div class="stat-number">12+</div>
+            <div class="stat-number" data-value="12+">12+</div>
             <div class="stat-label">Prospek Karir</div>
           </div>
         </div>
@@ -155,25 +182,9 @@
         </div>
 
         <div class="keunggulan-grid">
-          <!-- Card 1: Kurikulum -->
           <div class="card">
             <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path
-                  d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-                ></path>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
             </div>
             <h3 class="card-title">Kurikulum Berbasis Industri</h3>
             <p class="card-text">
@@ -182,31 +193,9 @@
             </p>
           </div>
 
-          <!-- Card 2: Fasilitas -->
           <div class="card">
             <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                <rect x="9" y="9" width="6" height="6"></rect>
-                <line x1="9" y1="1" x2="9" y2="4"></line>
-                <line x1="15" y1="1" x2="15" y2="4"></line>
-                <line x1="9" y1="20" x2="9" y2="23"></line>
-                <line x1="15" y1="20" x2="15" y2="23"></line>
-                <line x1="20" y1="9" x2="23" y2="9"></line>
-                <line x1="20" y1="14" x2="23" y2="14"></line>
-                <line x1="1" y1="9" x2="4" y2="9"></line>
-                <line x1="1" y1="14" x2="4" y2="14"></line>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line></svg>
             </div>
             <h3 class="card-title">Laboratorium Komputer</h3>
             <p class="card-text">
@@ -215,25 +204,9 @@
             </p>
           </div>
 
-          <!-- Card 3: Dosen -->
           <div class="card">
             <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
             </div>
             <h3 class="card-title">Pengajar Berpengalaman</h3>
             <p class="card-text">
@@ -242,23 +215,9 @@
             </p>
           </div>
 
-          <!-- Card 4: Prospek Karir -->
           <div class="card">
             <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
             </div>
             <h3 class="card-title">Peluang Karir Cemerlang</h3>
             <p class="card-text">
@@ -270,360 +229,33 @@
       </div>
     </section>
 
-    <!-- ==================== VISI SECTION ==================== -->
-    <section class="section">
-      <div class="container">
-        <div class="text-center mb-8">
-          <h2>Visi Program Studi</h2>
-        </div>
-
-        <div class="visi-box">
-          <h3>Visi</h3>
-          <p>
-            "Terwujudnya Program Studi Sistem Informasi yang Berwawasan
-            Kebangsaan dan Bereputasi Internasional pada bidang analisis data"
-          </p>
-        </div>
-
-        <div class="text-center" style="margin-top: 2rem">
-          <a href="tentang.html" class="btn btn-outline"
-            >Lihat Misi & Tujuan Lengkap</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== PROFIL LULUSAN SECTION ==================== -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="text-center mb-12">
-          <h2>Profil Lulusan</h2>
-          <p>4 Jalur Karir Utama Lulusan Sistem Informasi UBP Karawang</p>
-        </div>
-
-        <div class="profil-grid">
-          <!-- Profil 1 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-            </div>
-            <h3 class="card-title">Pengembang Sistem Multiplatform</h3>
-            <p class="card-text">
-              Business Process Analyst, System Analyst, dan Software Quality
-              Assurance Tester
-            </p>
-          </div>
-
-          <!-- Profil 2 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h3 class="card-title">Arsitek e-Business</h3>
-            <p class="card-text">
-              Business Intelligence Architect dan Data Engineer untuk sistem
-              informasi bisnis modern
-            </p>
-          </div>
-
-          <!-- Profil 3 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">Akademisi & Peneliti</h3>
-            <p class="card-text">
-              Melanjutkan studi ke jenjang S2 dan S3 untuk pengembangan ilmu
-              pengetahuan
-            </p>
-          </div>
-
-          <!-- Profil 4 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">Technopreneur</h3>
-            <p class="card-text">
-              Wirausahawan berbasis teknologi, mendirikan startup dan konsultan
-              IT
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== PROSPEK KARIR SECTION ==================== -->
+    <!-- ==================== PROSPEK KARIR ==================== -->
     <section class="section">
       <div class="container">
         <div class="text-center mb-12">
           <h2>Prospek Karir Lulusan</h2>
-          <p>
-            Lebih dari 12 pilihan karir di industri teknologi informasi di
-            antara nya
-          </p>
+          <p>Potensi karir luas di era transformasi digital bersama Prodi Sistem Informasi.</p>
         </div>
 
-        <div class="prospek-grid">
-          <!-- Karir 1 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="12" y1="1" x2="12" y2="23"></line>
-                <path
-                  d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="card-title">System Analyst</h3>
-            <p class="card-text">
-              Merancang dan menganalisis sistem informasi untuk kebutuhan bisnis
-            </p>
-          </div>
-
-          <!-- Karir 2 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-            </div>
-            <h3 class="card-title">Software Developer</h3>
-            <p class="card-text">
-              Membangun aplikasi dan software untuk berbagai platform
-            </p>
-          </div>
-
-          <!-- Karir 3 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">Database Administrator</h3>
-            <p class="card-text">
-              Mengelola dan mengoptimalkan basis data perusahaan
-            </p>
-          </div>
-
-          <!-- Karir 4 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                ></path>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-              </svg>
-            </div>
-            <h3 class="card-title">Business Analyst</h3>
-            <p class="card-text">
-              Menganalisis proses bisnis dan memberikan solusi IT
-            </p>
-          </div>
-
-          <!-- Karir 5 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path
-                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="card-title">Web Developer</h3>
-            <p class="card-text">
-              Membangun website dan aplikasi web interaktif
-            </p>
-          </div>
-
-          <!-- Karir 6 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="card-title">IT Consultant</h3>
-            <p class="card-text">
-              Memberikan konsultasi teknologi untuk organisasi
-            </p>
-          </div>
-
-          <!-- Karir 7 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-              </svg>
-            </div>
-            <h3 class="card-title">Data Scientist</h3>
-            <p class="card-text">
-              Menganalisis data besar untuk insight bisnis
-            </p>
-          </div>
-
-          <!-- Karir 8 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">Project Manager</h3>
-            <p class="card-text">Memimpin tim dan proyek teknologi informasi</p>
-          </div>
+        <div class="career-container">
+          <div class="career-pill"><span class="career-icon">💻</span><span class="career-name">Software Engineer</span></div>
+          <div class="career-pill"><span class="career-icon">📊</span><span class="career-name">Data Analyst</span></div>
+          <div class="career-pill"><span class="career-icon">📱</span><span class="career-name">Mobile App Developer</span></div>
+          <div class="career-pill"><span class="career-icon">🎨</span><span class="career-name">UI/UX Designer</span></div>
+          <div class="career-pill"><span class="career-icon">🛡️</span><span class="career-name">Cyber Security Analyst</span></div>
+          <div class="career-pill"><span class="career-icon">🌐</span><span class="career-name">Full Stack Developer</span></div>
+          <div class="career-pill"><span class="career-icon">📈</span><span class="career-name">System Analyst</span></div>
+          <div class="career-pill"><span class="career-icon">🗄️</span><span class="career-name">Database Administrator</span></div>
+          <div class="career-pill"><span class="career-icon">💼</span><span class="career-name">IT Consultant</span></div>
+          <div class="career-pill"><span class="career-icon">🚀</span><span class="career-name">Technopreneur</span></div>
+           <div class="career-pill"><span class="career-icon">🤖</span><span class="career-name">AI Specialist</span></div>
+           <div class="career-pill"><span class="career-icon">☁️</span><span class="career-name">Cloud Architect</span></div>
         </div>
       </div>
     </section>
 
     <!-- ==================== HIMASI SECTION ==================== -->
-    <section class="section section-alt">
+    <section class="section">
       <div class="container">
         <div class="text-center mb-8">
           <h2>Organisasi Mahasiswa</h2>
@@ -631,286 +263,180 @@
         </div>
 
         <div class="himasi-content">
-          <!-- Logo Box -->
           <div class="himasi-logo-box">
             <img src="images/logo-himasi.png" alt="Logo HIMASI" />
             <h4>HIMASI UBP Karawang</h4>
             <p>Berdiri: 10 September 2015</p>
-            <p>Diresmikan: 13 Februari 2017</p>
           </div>
 
-          <!-- Info Box with Slider -->
           <div class="himasi-info">
             <h3>Tentang HIMASI</h3>
             <p>
-              Himpunan Mahasiswa Sistem Informasi (HIMASI) merupakan wadah
-              pengembangan minat, bakat, dan profesionalisme mahasiswa Sistem
-              Informasi UBP Karawang. Organisasi ini aktif menyelenggarakan
-              berbagai kegiatan yang mendukung peningkatan kompetensi mahasiswa
-              di bidang teknologi informasi.
+              Himpunan Mahasiswa Sistem Informasi (HIMASI) merupakan wadah pengembangan minat, bakat, dan profesionalisme mahasiswa dalam lingkungan keluarga besar Sistem Informasi UBP Karawang.
             </p>
 
-            <div style="margin-top: var(--space-8)">
-              <h4
-                style="
-                  color: var(--color-primary);
-                  margin-bottom: var(--space-6);
-                  text-align: center;
-                "
-              >
-                Program & Kegiatan HIMASI
-              </h4>
-
-              <!-- SLIDER KEGIATAN -->
+            <div style="margin-top: 2rem">
+              <h4 style="margin-bottom: 1rem; color: var(--color-primary);">Kegiatan Terbaru</h4>
               <div class="kegiatan-slider">
                 <div class="slider-container" id="kegiatanSlider">
-                  <!-- Slide 1: SIBOOTCAMP -->
                   <div class="slide active">
-                    <img
-                      src="images/himasi-sibootcamp.jpg"
-                      alt="SIBOOTCAMP 2025"
-                      class="slide-image"
-                    />
+                    <img src="images/himasi-sibootcamp.jpg" alt="SIBOOTCAMP" class="slide-image" />
                     <div class="slide-content">
                       <h5 class="slide-title">SIBOOTCAMP 2025</h5>
+                      <p class="slide-date">5 Juli 2025</p>
                       <p class="slide-description">
-                        Program bootcamp intensif dengan tema "Siapkan Diri
-                        untuk Masa Depan dengan Kompetensi di Era Digital" yang
-                        berlangsung selama 2+ bulan (14 April - 21 Juni 2025).
-                        Fokus pada pengembangan skill UI/UX Design dan Front-End
-                        Development, membekali mahasiswa dengan keterampilan
-                        yang dibutuhkan industri digital masa kini.
+                        Kegiatan pelatihan intensif yang dirancang untuk meningkatkan kompetensi mahasiswa baru dalam bidang pemrograman web dan mobile development.
                       </p>
                     </div>
                   </div>
-
-                  <!-- Slide 2: MESI -->
                   <div class="slide">
-                    <img
-                      src="images/himasi-mesi.jpg"
-                      alt="MESI 2025"
-                      class="slide-image"
-                    />
+                    <img src="images/himasi-mesi.jpg" alt="MESI" class="slide-image" />
                     <div class="slide-content">
-                      <h5 class="slide-title">
-                        Mengabdi Sistem Informasi (MESI) 2025
-                      </h5>
+                      <h5 class="slide-title">MESI 2025</h5>
+                      <p class="slide-date">3 September 2025</p>
                       <p class="slide-description">
-                        Kegiatan Pengabdian Masyarakat di Desa Sirnabaya (23-24
-                        Agustus 2025) dengan tema "Mengabdi Bersama Melalui
-                        Inovasi Digital untuk Kesejahteraan Masyarakat". Diikuti
-                        oleh 86 mahasiswa, kegiatan ini bertujuan meningkatkan
-                        pengetahuan masyarakat mengenai teknologi informasi dan
-                        menjalin hubungan harmonis dengan komunitas lokal.
+                        Mengabdi Sistem Informasi (MESI) merupakan agenda tahunan himpunan untuk berkontribusi langsung kepada masyarakat melalui pelatihan literasi digital di desa binaan.
                       </p>
                     </div>
                   </div>
-
-                  <!-- Slide 3: Seminar Nasional -->
+                  <!-- NEW SLIDE: SEMINAR -->
                   <div class="slide">
-                    <img
-                      src="images/himasi-seminar.jpg"
-                      alt="Seminar Nasional 2024"
-                      class="slide-image"
-                    />
+                    <img src="images/himasi-seminar.jpg" alt="Seminar Nasional" class="slide-image" />
                     <div class="slide-content">
-                      <h5 class="slide-title">
-                        Seminar Nasional Web Developer 2024
-                      </h5>
+                      <h5 class="slide-title">SEMINAR NASIONAL</h5>
+                      <p class="slide-date">7 Desember 2024</p>
                       <p class="slide-description">
-                        Seminar Nasional dengan tema "Menyiapkan Generasi Web
-                        Developer Berdaya Saing Global" yang dihadiri lebih dari
-                        300 peserta (18 November 2024). Merupakan bagian dari
-                        Insyfest (Information System Festival), acara ini
-                        menghadirkan pembicara expert untuk membekali mahasiswa
-                        dengan pengetahuan industri terkini.
+                        Seminar Nasional Teknologi Informasi yang menghadirkan praktisi dan akademisi untuk berbagi wawasan mengenai tren teknologi masa depan seperti AI dan Cloud Computing.
                       </p>
                     </div>
                   </div>
-
-                  <!-- Slide 4: School Visit -->
+                  <!-- NEW SLIDE: SCHOOL VISIT -->
                   <div class="slide">
-                    <img
-                      src="images/himasi-schoolvisit.jpg"
-                      alt="School Visit 2024"
-                      class="slide-image"
-                    />
+                    <img src="images/himasi-schoolvisit.jpg" alt="School Visit" class="slide-image" />
                     <div class="slide-content">
-                      <h5 class="slide-title">
-                        School Visit: Sosialisasi Keamanan Digital
-                      </h5>
+                      <h5 class="slide-title">HIMASI GOES TO SCHOOL</h5>
+                      <p class="slide-date">10 November 2024</p>
                       <p class="slide-description">
-                        Program sosialisasi "Memahami Keamanan Digital" di SMK
-                        Pertanian Karawang (15 November 2024) dan SMA 4 Karawang
-                        (18 November 2024). Kegiatan ini bertujuan meningkatkan
-                        kesadaran pelajar mengenai pentingnya menjaga keamanan
-                        data pribadi di era teknologi yang semakin berkembang.
+                        Program "HIMASI Goes to School" untuk memperkenalkan dunia perkuliahan dan prospek karir bidang IT kepada siswa-siswi SMA/SMK di Karawang.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- NEW SLIDE: HIMASI BERBAGI -->
+                  <div class="slide">
+                    <img src="images/himbagi.jpg" alt="HIMASI Berbagi" class="slide-image" />
+                    <div class="slide-content">
+                      <h5 class="slide-title">HIMASI BERBAGI</h5>
+                      <p class="slide-date">7 November 2025</p>
+                      <p class="slide-description">
+                        Aksi sosial tahunan sebagai wujud kepedulian mahasiswa dengan berbagi bantuan kepada masyarakat dan mitra ojek online di sekitar lingkungan kampus UBP.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- NEW SLIDE: INSYFEST -->
+                  <div class="slide">
+                    <img src="images/insyfest.jpg" alt="INSYFEST 2025" class="slide-image" />
+                    <div class="slide-content">
+                      <h5 class="slide-title">INSYFEST 2025</h5>
+                      <p class="slide-date">27 September 2025</p>
+                      <p class="slide-description">
+                        Festival kolaborasi Ennofest x Pharmafest yang menggabungkan kewirausahaan melalui bazaar UMKM, kompetisi e-sports, dan aksi sosial donor darah.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- NEW SLIDE: ANGGOTA MUDA -->
+                  <div class="slide">
+                    <img src="images/anggota_muda.jpg" alt="Anggota Muda 2025" class="slide-image" />
+                    <div class="slide-content">
+                      <h5 class="slide-title">CEREMONIAL ANGGOTA MUDA 2025</h5>
+                      <p class="slide-date">1 November 2025</p>
+                      <p class="slide-description">
+                        Puncak kegiatan Masa Pengkaderan (MAPAMSI) 2025 yang ditandai dengan presentasi project akhir dan pengesahan resmi Anggota Muda HIMASI sebagai penerus organisasi berintegritas.
                       </p>
                     </div>
                   </div>
                 </div>
-
-                <!-- Navigation Buttons -->
-                <div class="slider-nav prev" id="prevBtn">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                  </svg>
-                </div>
-                <div class="slider-nav next" id="nextBtn">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                  </svg>
-                </div>
-
-                <!-- Dots Indicator -->
-                <div class="slider-dots" id="sliderDots">
-                  <span class="dot active" data-slide="0"></span>
-                  <span class="dot" data-slide="1"></span>
-                  <span class="dot" data-slide="2"></span>
-                  <span class="dot" data-slide="3"></span>
-                </div>
+                <div class="slider-nav prev" id="prevBtn">❮</div>
+                <div class="slider-nav next" id="nextBtn">❯</div>
               </div>
-              <!-- END SLIDER -->
             </div>
-
-            <div style="margin-top: 1.5rem; text-align: center">
-              <a href="tentang.html" class="btn btn-primary"
-                >Pelajari Lebih Lanjut</a
-              >
-            </div>
+            <!-- Button Removed as per User Request -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== CTA SECTION ==================== -->
+    <!-- ==================== CTA SECTION (SPLIT LAYOUT) ==================== -->
+    <!-- Result: Professional Graduate (Putra-2) -->
     <section class="cta-section">
-      <h2>Siap Memulai Perjalananmu?</h2>
-      <p>
-        Bergabunglah dengan ribuan mahasiswa yang telah mempercayai kami untuk
-        mengembangkan karir di bidang teknologi informasi.
-      </p>
-      <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+       <div class="container">
+         <div class="split-section reverse-mobile">
+           <!-- Image Left (Putra-2) -->
+           <div class="person-img-container">
+             <img src="images/mahasiswa/putra-2.png" alt="Mahasiswa Profesional" class="person-img" />
+           </div>
+
+           <!-- Text Right -->
+           <div style="text-align: left;">
+             <h2>Siap Menjadi Profesional?</h2>
+             <p class="mb-8" style="margin-left: 0;">
+               Bergabunglah dengan ribuan mahasiswa yang telah mempercayai kami untuk mengembangkan karir di bidang teknologi informasi. Jadilah bagian dari transformasi digital masa depan.
+             </p>
+             <a href="https://penmabar.ubpkarawang.ac.id/" target="_blank" class="btn btn-primary btn-magnetic">Daftar Sekarang</a>
+           </div>
+         </div>
+       </div>
     </section>
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-content">
-          <!-- Kolom 1: Logo & Info -->
           <div>
             <div class="footer-logo">
               <img src="images/logo-ubp.png" alt="Logo UBP" />
               <img src="images/logo-fik.png" alt="Logo FIK" />
             </div>
-            <p>
-              Program Studi Sistem Informasi<br />Fakultas Ilmu Komputer<br />Universitas
-              Buana Perjuangan Karawang
-            </p>
+            <p>Program Studi Sistem Informasi<br />Fakultas Ilmu Komputer<br />UBP Karawang</p>
           </div>
-
-          <!-- Kolom 2: Quick Links -->
           <div>
             <h4 class="footer-title">Menu</h4>
             <div class="footer-links">
               <a href="index.html" class="footer-link">Home</a>
               <a href="tentang.html" class="footer-link">Tentang</a>
-              <a href="kurikulum.html" class="footer-link">Kurikulum</a>
               <a href="dosen.html" class="footer-link">Dosen</a>
               <a href="kontak.html" class="footer-link">Kontak</a>
             </div>
           </div>
-
-          <!-- Kolom 3: Kontak -->
           <div>
             <h4 class="footer-title">Kontak</h4>
             <div class="footer-links">
               <p>Email: fik@ubpkarawang.ac.id</p>
-              <p>Telepon: (0267) 8403140</p>
-              <p>
-                Alamat: Jl. HS. Ronggowaluyo<br />Telukjambe Timur, Karawang
-              </p>
+              <p>Tel: (0267) 8403140</p>
             </div>
           </div>
         </div>
-
         <div class="footer-bottom">
-          <p>
-            &copy; 2025 Program Studi Sistem Informasi FIK UBP Karawang. All
-            rights reserved.
-          </p>
+          <p>&copy; 2025 Prodi Sistem Informasi FIK UBP Karawang.</p>
         </div>
       </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <line x1="12" y1="19" x2="12" y2="5"></line>
-        <polyline points="5 12 12 5 19 12"></polyline>
-      </svg>
-    </div>
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">↑</div>
 
-    <!-- ==================== JAVASCRIPT ==================== -->
-    <script src="js/main.js"></script>
+    <!-- Scripts -->
     <script src="js/animations.js"></script>
-
-    <!-- PWA Service Worker Registration -->
+    <script src="js/particles.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- PWA -->
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/service-worker.js")
-            .then((registration) => {
-              console.log(
-                "✅ Service Worker registered successfully:",
-                registration.scope
-              );
-              console.log("📱 PWA ready! You can now install this app.");
-            })
-            .catch((error) => {
-              console.error("❌ Service Worker registration failed:", error);
-            });
+          navigator.serviceWorker.register("/service-worker.js");
         });
       }
-
-      // PWA Install Prompt
-      let deferredPrompt;
-      window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        console.log("💡 App is installable!");
-      });
     </script>
   </body>
 </html>

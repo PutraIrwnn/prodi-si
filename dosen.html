@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2563eb" />
+    <title>Dosen - Sistem Informasi UBP</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css?v=2" />
+    <link rel="stylesheet" href="css/reset.css?v=2" />
+    <link rel="stylesheet" href="css/components.css?v=2" />
+    <link rel="stylesheet" href="css/main.css?v=12" />
+    <link rel="stylesheet" href="css/pages.css?v=6" />
+    
+    <!-- PWA Helper -->
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <!-- Preloader (REDESIGNED) -->
+    <div class="preloader" id="preloader">
+      <div class="loader-content">
+        <img src="images/logo-ubp.png" alt="UBP Logo" class="loader-logo" />
+        <div class="loader-ring"></div>
+      </div>
+      <div class="loading-text">LOADING DATA...</div>
+    </div>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">
+          <img src="images/logo-ubp.png" alt="UBP Logo" />
+          <img src="images/logo-fik.png" alt="FIK Logo" />
+        </a>
+        
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
+
+        <ul class="navbar-menu" id="navbarMenu">
+          <li><a href="index.html" class="navbar-link">Beranda</a></li>
+          <li><a href="tentang.html" class="navbar-link">Tentang</a></li>
+          <li><a href="dosen.html" class="navbar-link active">Dosen</a></li>
+          <li><a href="kontak.html" class="navbar-link">Kontak</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION (Compact) ==================== -->
+    <section class="hero" style="min-height: 50vh; height: 50vh;">
+      <div class="hero-background">
+        <img src="images/hero-campus.jpg" alt="Campus" />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">DOSEN</h1>
+        <p class="hero-subtitle">Tenaga Pendidik Profesional Program Studi Sistem Informasi UBP Karawang.</p>
+      </div>
+    </section>
+
+    <!-- ==================== DOSEN GRID ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="dosen-grid">
+          
+          <!-- Dosen 1: Dedi Mulyadi -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/dedi_mulyadi.jpg" class="dosen-img" alt="Prof. Dr. Dedi Mulyadi" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Prof. Dr. Dedi Mulyadi, SE.,MM.</h3>
+            <span class="dosen-nidn">NIDN: 0411076201</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=o6WJ0FIAAAAJ&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 2: Ahmad Fauzi -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/ahmad_fauzi.jpg" class="dosen-img" alt="Dr. Ahmad Fauzi" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Dr. Ahmad Fauzi, M.Kom</h3>
+            <span class="dosen-nidn">NIDN: 0403048301</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=R0_uT9MAAAAJ&hl=en" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 3: Tukino Paryono -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/tukino_paryono.jpg" class="dosen-img" alt="Tukino Paryono" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Tukino Paryono, MMSI</h3>
+            <span class="dosen-nidn">NIDN: 0423036803</span>
+            <div style="margin-top: -0.5rem; font-size: 0.8rem; font-weight: bold; color: var(--color-secondary); margin-bottom: 0.5rem;">KAPRODI</div>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.com/citations?user=sBQ5lukexHEC&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 4: Baenil Huda -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/baenil_huda.jpg" class="dosen-img" alt="Baenil Huda" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Baenil Huda, ST., M.Kom.</h3>
+            <span class="dosen-nidn">NIDN: 0403018006</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=aGC-hncAAAAJ&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 5: Agustia Hananto -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/agustia_hananto.jpg" class="dosen-img" alt="Agustia Hananto" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Agustia Hananto, M.Kom.</h3>
+            <span class="dosen-nidn">NIDN: 0411098902</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.com/citations?user=mEqI0bEAAAAJ&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 6: Bayu Priyatna -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/bayu_priyatna.jpg" class="dosen-img" alt="Bayu Priyatna" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Bayu Priyatna, M.Kom.</h3>
+            <span class="dosen-nidn">NIDN: 0405029101</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=MuBMNZcAAAAJ&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 7: Elfina Novalia -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/elfina_novalia.jpg" class="dosen-img" alt="Elfina Novalia" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Elfina Novalia, M.Kom.</h3>
+            <span class="dosen-nidn">NIDN: 0425028604</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.com/citations?user=TBGpu-MAAAAJ&hl=id&oi=sra" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 8: Shofa Shofia -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/shofa_shofia.jpg" class="dosen-img" alt="Dr. Shofa Shofia Hilabi" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Dr. Shofa Shofia Hilabi, M.Kom.</h3>
+            <span class="dosen-nidn">NIDN: 0429047707</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=Rr2PrdsAAAAJ&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 9: April Lia -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/april_lia.jpg" class="dosen-img" alt="Ir. April Lia Hananto" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Ir. April Lia Hananto, Ph.D</h3>
+            <span class="dosen-nidn">NIDN: 0403048301</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=R0_uT9MAAAAJ&hl=en" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 10: Jamaludin Indra -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/jamaludin_indra.jpg" class="dosen-img" alt="Jamaludin Indra" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Jamaludin Indra, M.Kom.</h3>
+            <span class="dosen-nidn">NIDN: 0401016912</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=BXyk1foAAAAJ&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 11: Fitri Nurapriani -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/fitri_nurapriani.jpg" class="dosen-img" alt="Fitri Nurapriani" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Fitri Nurapriani, M.Pd.</h3>
+            <span class="dosen-nidn">NIDN: 0423049002</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=4hQXI5QAAAAJ&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 12: Yogi Nugraha -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/yogi_nugraha.jpg" class="dosen-img" alt="Dr. Yogi Nugraha" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Dr. Yogi Nugraha, M.Pd.</h3>
+            <span class="dosen-nidn">NIDN: 0416098803</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=-UQnkDsAAAAJ&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 13: Hanny Hikmayanty -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/hanny_hikmayanty.jpg" class="dosen-img" alt="Dr. Hanny Hikmayanty" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Dr. Hanny Hikmayanty, M.Kom</h3>
+            <span class="dosen-nidn">NIDN: 0404048402</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=0vETYqwAAAAJ&hl=id" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+          <!-- Dosen 14: Amril Mutoi -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/amril_mutoi.jpg" class="dosen-img" alt="Dr. Amril Mutoi Siregar" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Dr Amril Mutoi Siregar M.Kom</h3>
+            <span class="dosen-nidn">NIDN: 0404048404</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?view_op=list_works&hl=id&hl=id&user=KGn48hEAAAAJ" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+          
+           <!-- Dosen 15: Kiki Ahmad -->
+          <div class="dosen-card animate">
+            <div class="dosen-img-container">
+              <img src="images/dosen/kiki_ahmad.jpg" class="dosen-img" alt="Kiki Ahmad Baihaqi" onerror="this.src='https://via.placeholder.com/150?text=Foto'" />
+            </div>
+            <h3 class="dosen-name">Kiki Ahmad Baihaqi, M.Kom</h3>
+            <span class="dosen-nidn">NIDN: 0403109203</span>
+            
+            <span class="dosen-pub-title">Publikasi</span>
+            <div class="dosen-links">
+               <a href="https://scholar.google.co.id/citations?user=tiKy_OEAAAAJ&hl=id&oi=sra" target="_blank" class="dosen-link">Google Scholar</a>
+               <a href="https://www.scopus.com/authid/detail.uri?authorId=57438902400" target="_blank" class="dosen-link">Scopus</a>
+               <span class="dosen-text-item">Web of Sciences</span>
+               <a href="https://sinta.kemdikbud.go.id/authors/profile/6002304" target="_blank" class="dosen-link">Sinta</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div>
+            <div class="footer-logo">
+              <img src="images/logo-ubp.png" alt="Logo UBP" />
+              <img src="images/logo-fik.png" alt="Logo FIK" />
+            </div>
+            <p>Program Studi Sistem Informasi<br />Fakultas Ilmu Komputer<br />UBP Karawang</p>
+          </div>
+          <div>
+            <h4 class="footer-title">Menu</h4>
+            <div class="footer-links">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="tentang.html" class="footer-link">Tentang</a>
+              <a href="dosen.html" class="footer-link">Dosen</a>
+              <a href="kontak.html" class="footer-link">Kontak</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Kontak</h4>
+            <div class="footer-links">
+              <p>Email: fik@ubpkarawang.ac.id</p>
+              <p>Tel: (0267) 8403140</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Prodi Sistem Informasi FIK UBP Karawang.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

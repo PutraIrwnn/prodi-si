@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2563eb" />
+    <title>Kontak - Sistem Informasi UBP</title>
+    <link rel="shortcut icon" href="images/logo-ubp.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css?v=30" />
+    <link rel="stylesheet" href="css/reset.css?v=30" />
+    <link rel="stylesheet" href="css/components.css?v=30" />
+    <link rel="stylesheet" href="css/main.css?v=30" />
+    <link rel="stylesheet" href="css/pages.css?v=30" />
+    
+    <!-- PWA Helper -->
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <!-- Preloader (REDESIGNED) -->
+    <div class="preloader" id="preloader">
+      <div class="loader-content">
+        <img src="images/logo-ubp.png" alt="UBP Logo" class="loader-logo" />
+        <div class="loader-ring"></div>
+      </div>
+      <div class="loading-text">LOADING DATA...</div>
+    </div>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">
+          <img src="images/logo-ubp.png" alt="UBP Logo" />
+          <img src="images/logo-fik.png" alt="FIK Logo" />
+        </a>
+        
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
+
+        <ul class="navbar-menu" id="navbarMenu">
+          <li><a href="index.html" class="navbar-link">Beranda</a></li>
+          <li><a href="tentang.html" class="navbar-link">Tentang</a></li>
+          <li><a href="dosen.html" class="navbar-link">Dosen</a></li>
+          <li><a href="kontak.html" class="navbar-link active">Kontak</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION (Compact) ==================== -->
+    <!-- Adjusted alignment for Kontak Page: Align Top + Padding -->
+    <section class="hero" style="min-height: 50vh; height: 50vh; align-items: flex-start; padding-top: 110px;">
+      <div class="hero-background">
+        <img src="images/hero-campus.jpg" alt="Campus" />
+      </div>
+      <div class="hero-overlay"></div>
+      
+      <!-- Reduced GAP to 1rem -->
+      <div class="hero-content" style="gap: 1rem;">
+        <h1 class="hero-title">HUBUNGI KAMI</h1>
+        
+        <!-- REMOVED MARGIN BOTTOM -->
+        <p class="hero-subtitle" style="margin-bottom: 0;">Kami siap membantu dan menjawab pertanyaan Anda seputar Program Studi Sistem Informasi.</p>
+        
+        <!-- NEW: Daftar Sekarang Button -->
+        <a href="https://penmabar.ubpkarawang.ac.id/" target="_blank" class="btn btn-primary btn-magnetic">Daftar Sekarang</a>
+      </div>
+    </section>
+
+    <!-- ==================== AYO HUBUNGI KAMI (Fauzan) ==================== -->
+    <section class="section">
+      <div class="container">
+        <!-- Fauzan Section: Responsive Split -->
+        <div class="profile-split">
+          <!-- Image (Fauzan) -->
+          <div class="person-img-container" style="height: 450px;">
+            <img src="images/mahasiswa/fauzan.png" alt="Mahasiswa CS" class="person-img" style="max-width: 100%; transform: translateY(-50px);" />
+            <!-- Bubble -->
+            <div class="speech-bubble" style="top: -7%; left: -10%; right: auto;">
+              Butuh Bantuan? 👋
+            </div>
+          </div>
+
+          <!-- Text Right -->
+          <div>
+            <h2 class="mb-4">Ayo Hubungi Kami!</h2>
+            <p class="mb-4" style="font-size: 1.1rem; color: var(--color-text-main);">
+              Punya pertanyaan seputar pendaftaran, kurikulum, atau kegiatan mahasiswa? Jangan ragu untuk bertanya.
+            </p>
+            <p class="mb-8" style="color: var(--color-text-muted);">
+              Tim kami dan kakak-kakak mahasiswa seperti Fauzan siap membantu memberikan informasi yang kamu butuhkan.
+            </p>
+            
+            <a href="https://wa.me/6289661116600" target="_blank" class="btn btn-primary btn-magnetic">
+              Chat WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT INFO GRID ==================== -->
+    <section class="section">
+      <div class="contact-container">
+        
+        <div class="contact-info-grid">
+          <!-- Address Card -->
+          <div class="contact-card animate">
+            <div class="contact-icon">📍</div>
+            <h3 class="contact-title">Alamat Kampus</h3>
+            <p class="contact-text">
+              <strong>Kampus Pusat UBP Karawang</strong>
+              Jl. HS. Ronggo Waluyo, Puseurjaya,<br>
+              Telukjambe Timur, Karawang,<br>
+              Jawa Barat 41361
+            </p>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="contact-card animate">
+            <div class="contact-icon">📞</div>
+            <h3 class="contact-title">Telepon / WhatsApp</h3>
+            <p class="contact-text">
+              <strong>Admin 1:</strong> 0896 - 6111 - 6600<br>
+              <strong>Admin 2:</strong> 0896 - 6111 - 6611<br>
+              <strong>Telp Kantor:</strong> (0267) 8403140
+            </p>
+          </div>
+
+          <!-- Email Card -->
+          <div class="contact-card animate">
+            <div class="contact-icon">✉️</div>
+            <h3 class="contact-title">Email & Website</h3>
+            <p class="contact-text">
+              <strong>Email:</strong> info@ubpkarawang.ac.id<br>
+              <strong>Website:</strong> si.ubpkarawang.ac.id<br>
+              <strong>PMB:</strong> penmabar.ubpkarawang.ac.id
+            </p>
+          </div>
+          
+           <!-- Social Card -->
+          <div class="contact-card animate">
+            <div class="contact-icon">🌐</div>
+            <h3 class="contact-title">Media Sosial</h3>
+             <p class="contact-text">
+              <strong>Instagram:</strong> @sisteminformasi_ubp<br>
+              <strong>Facebook:</strong> Sistem Informasi UBP<br>
+              <strong>YouTube:</strong> FIK UBP Official
+            </p>
+          </div>
+        </div>
+
+        <!-- ==================== MAP SECTION ==================== -->
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--color-primary);">Lokasi Kami</h2>
+        <div class="map-section animate">
+           <iframe 
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5444390666683!2d107.30315731476964!3d-6.323395995423528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6977cc90b83cc3%3A0xe542614b8705f134!2sUniversitas%20Buana%20Perjuangan%20Karawang!5e0!3m2!1sid!2sid!4v1672828282828!5m2!1sid!2sid" 
+             class="map-frame" 
+             allowfullscreen="" 
+             loading="lazy" 
+             referrerpolicy="no-referrer-when-downgrade">
+           </iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div>
+            <div class="footer-logo">
+              <img src="images/logo-ubp.png" alt="Logo UBP" />
+              <img src="images/logo-fik.png" alt="Logo FIK" />
+            </div>
+            <p>Program Studi Sistem Informasi<br />Fakultas Ilmu Komputer<br />UBP Karawang</p>
+          </div>
+          <div>
+            <h4 class="footer-title">Menu</h4>
+            <div class="footer-links">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="tentang.html" class="footer-link">Tentang</a>
+              <a href="dosen.html" class="footer-link">Dosen</a>
+              <a href="kontak.html" class="footer-link">Kontak</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Kontak</h4>
+            <div class="footer-links">
+              <p>Email: fik@ubpkarawang.ac.id</p>
+              <p>Tel: (0267) 8403140</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Prodi Sistem Informasi FIK UBP Karawang.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

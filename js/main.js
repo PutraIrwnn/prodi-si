@@ -1,3 +1,16 @@
+// Preloader Logic -- CRITICAL FIX
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    // Add fade-out class to trigger CSS transition
+    preloader.classList.add('fade-out');
+    // Remove from DOM/Display after transition
+    setTimeout(() => {
+        preloader.style.display = 'none';
+    }, 500); 
+  }
+});
+
 // Mobile Menu Toggle
 const navbarToggle = document.getElementById("navbarToggle");
 const navbarMenu = document.getElementById("navbarMenu");
@@ -72,9 +85,9 @@ const backToTopBtn = document.getElementById("backToTop");
 if (backToTopBtn) {
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 500) {
-      backToTopBtn.classList.add("show");
+      backToTopBtn.classList.add("active"); // Changed from 'show' to 'active'
     } else {
-      backToTopBtn.classList.remove("show");
+      backToTopBtn.classList.remove("active");
     }
   });
 

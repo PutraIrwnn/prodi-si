@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2563eb" />
+    <title>Tentang Kami - Sistem Informasi UBP</title>
+    <link rel="shortcut icon" href="images/logo-ubp.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css?v=30" />
+    <link rel="stylesheet" href="css/reset.css?v=30" />
+    <link rel="stylesheet" href="css/components.css?v=30" />
+    <link rel="stylesheet" href="css/main.css?v=30" />
+    <link rel="stylesheet" href="css/pages.css?v=30" />
+    
+    <!-- PWA Helper -->
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <!-- Preloader (REDESIGNED) -->
+    <div class="preloader" id="preloader">
+      <div class="loader-content">
+        <img src="images/logo-ubp.png" alt="UBP Logo" class="loader-logo" />
+        <div class="loader-ring"></div>
+      </div>
+      <div class="loading-text">LOADING DATA...</div>
+    </div>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">
+          <img src="images/logo-ubp.png" alt="UBP Logo" />
+          <img src="images/logo-fik.png" alt="FIK Logo" />
+        </a>
+        
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
+
+        <ul class="navbar-menu" id="navbarMenu">
+          <li><a href="index.html" class="navbar-link">Beranda</a></li>
+          <li><a href="tentang.html" class="navbar-link active">Tentang</a></li>
+          <!-- Kurikulum Removed -->
+          <li><a href="dosen.html" class="navbar-link">Dosen</a></li>
+          <li><a href="kontak.html" class="navbar-link">Kontak</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION (Compact) ==================== -->
+    <section class="hero" style="min-height: 50vh; height: 50vh;">
+      <div class="hero-background">
+        <img src="images/hero-campus.jpg" alt="Campus" />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">TENTANG KAMI</h1>
+        <p class="hero-subtitle">Mengenal lebih dekat Profil, Visi, dan Sejarah Program Studi Sistem Informasi.</p>
+      </div>
+    </section>
+
+    <!-- ==================== APA ITU SI (Wildan) ==================== -->
+    <section class="section">
+      <div class="container">
+          <!-- Updated to use Responsive Grid -->
+          <div class="profile-split">
+            <div>
+              <h2 class="mb-4">Apa itu Sistem Informasi?</h2>
+              <p class="mb-4" style="font-size: 1.1rem; color: var(--color-text-main);">
+                <strong>Sistem Informasi</strong> adalah jembatan penghubung antara dunia <em>Teknologi (Computer Science)</em> dengan dunia <em>Bisnis & Manajemen</em>.
+              </p>
+              <p class="mb-4" style="color: var(--color-text-muted);">
+                Berbeda dengan Teknik Informatika yang fokus mendalam pada pembuatan software dan algoritma, Sistem Informasi fokus pada <strong>penerapan teknologi</strong> untuk memecahkan masalah organisasi.
+              </p>
+              <p class="mb-8" style="color: var(--color-text-muted);">
+                Di sini, kamu akan belajar cara menganalisis kebutuhan bisnis, merancang sistem strategi, mengelola proyek IT, hingga memanfaatkan Big Data untuk pengambilan keputusan strategis.
+              </p>
+            </div>
+
+            <!-- Image (Wildan) -->
+            <div class="person-img-container" style="height: 450px;">
+              <img src="images/mahasiswa/wildan.png" alt="Mahasiswa SI" class="person-img" style="max-width: 100%; transform: translateY(-80px);" />
+              <!-- Bubble -->
+              <div class="speech-bubble" style="top: -7%; right: -10%; left: auto;">
+                Sistem Informasi adalah... 🤔
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- ==================== KAPRODI SECTION ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="profile-card animate">
+          <div class="profile-image-container">
+            <!-- Ensure image exists or use placeholder -->
+            <img src="images/kaprodi.png" alt="Tukino Paryono, MMSI" onerror="this.src='https://via.placeholder.com/200?text=Kaprodi'" />
+          </div>
+          <div class="profile-content">
+            <h3>Tukino Paryono, MMSI</h3>
+            <span class="role">Ketua Program Studi Sistem Informasi</span>
+            <p style="margin-bottom: 1rem;">
+              "Selamat datang di Program Studi Sistem Informasi UBP Karawang. Di era transformasi digital yang begitu cepat, kami berkomitmen mencetak lulusan yang tidak hanya menguasai teknis analisis data, tetapi juga memiliki wawasan kebangsaan dan etika profesional."
+            </p>
+            <p>
+              "Kurikulum kami dirancang adaptif terhadap kebutuhan industri, memastikan setiap mahasiswa siap berkarya dan berinovasi untuk kemajuan bangsa dan dunia global."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VISI MISI SECTION ==================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="text-center mb-12">
+          <h2>Visi & Misi</h2>
+        </div>
+        
+        <div class="visi-box animate" style="margin-bottom: 3rem;">
+          <h3 class="text-center mb-4">Visi</h3>
+          <p class="text-center" style="font-size: 1.5rem; font-weight: 300;">
+            "Terwujudnya Program Studi Sistem Informasi yang Berwawasan Kebangsaan dan Bereputasi Internasional pada bidang analisis data"
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <!-- Misi Card -->
+          <div class="card animate">
+            <h3 class="mb-4" style="color: var(--color-primary);">Misi</h3>
+            <ul class="list-check">
+              <li>Melaksanakan pembinaan dan pengembangan sumber daya manusia dalam bidang analisis data dan berwawasan kebangsaan.</li>
+              <li>Mengembangkan ekosistem pendidikan, pengajaran dan penelitian bidang analisis data dan system modeling.</li>
+              <li>Melakukan adaptasi dan inovasi dalam menghadapi perkembangan teknologi informasi bisnis.</li>
+              <li>Meningkatkan kerjasama dengan berbagai institusi nasional dan internasional.</li>
+            </ul>
+          </div>
+
+          <!-- Tujuan Card -->
+          <div class="card animate">
+            <h3 class="mb-4" style="color: var(--color-primary);">Tujuan</h3>
+            <ul class="list-check">
+              <li>Tercapainya kualifikasi dan kompetensi Peserta Didik dan Dosen yang berjiwa Pancasila.</li>
+              <li>Terwujudnya lulusan berakhlak terpuji dan berdaya saing internasional.</li>
+              <li>Tercapainya karya nyata hasil riset dan inovasi Bidang Informasi Bisnis.</li>
+              <li>Terwujudnya jejaring kemitraan strategis (Nasional & Internasional).</li>
+              <li>Tersedianya sarana dan prasarana mutakhir pendukung riset Informasi Bisnis.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEJARAH TIMELINE ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-12">
+          <h2>Jejak Langkah</h2>
+          <p>Sejarah perjalanan Program Studi Sistem Informasi</p>
+        </div>
+
+        <div class="timeline-section">
+          <div class="timeline">
+            <!-- 2014 -->
+            <div class="timeline-item animate">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2014</div>
+                <h3>Pendirian Program Studi</h3>
+                <p>Resmi berdiri dan mulai menerima angkatan pertama mahasiswa Sistem Informasi di UBP Karawang.</p>
+              </div>
+            </div>
+
+            <!-- 2017 -->
+            <div class="timeline-item animate">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2017</div>
+                <h3>Peresmian HIMASI</h3>
+                <p>Himpunan Mahasiswa Sistem Informasi (HIMASI) diresmikan pada 13 Februari, menjadi wadah kreativitas mahasiswa.</p>
+              </div>
+            </div>
+
+            <!-- 2024 -->
+            <div class="timeline-item animate">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2024</div>
+                <h3>Akreditasi Unggul</h3>
+                <p>Meraih predikat Akreditasi Unggul, membuktikan kualitas pendidikan yang setara standar nasional tertinggi.</p>
+              </div>
+            </div>
+             
+             <!-- Future -->
+             <div class="timeline-item animate">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">Masa Depan</div>
+                <h3>Visi Global</h3>
+                <p>Terus berinovasi menuju reputasi internasional dalam bidang Data Science dan AI.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div>
+            <div class="footer-logo">
+              <img src="images/logo-ubp.png" alt="Logo UBP" />
+              <img src="images/logo-fik.png" alt="Logo FIK" />
+            </div>
+            <p>Program Studi Sistem Informasi<br />Fakultas Ilmu Komputer<br />UBP Karawang</p>
+          </div>
+          <div>
+            <h4 class="footer-title">Menu</h4>
+            <div class="footer-links">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="tentang.html" class="footer-link">Tentang</a>
+              <!-- Kurikulum Removed -->
+              <a href="dosen.html" class="footer-link">Dosen</a>
+              <a href="kontak.html" class="footer-link">Kontak</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Kontak</h4>
+            <div class="footer-links">
+              <p>Email: fik@ubpkarawang.ac.id</p>
+              <p>Tel: (0267) 8403140</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Prodi Sistem Informasi FIK UBP Karawang.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

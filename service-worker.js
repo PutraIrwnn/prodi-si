@@ -1,4 +1,4 @@
-const CACHE_NAME = "prodi-si-ubp-v2";
+const CACHE_NAME = "prodi-si-ubp-v3";
 const urlsToCache = [
   "/",
   "/index.html",
@@ -24,83 +24,52 @@ const urlsToCache = [
 
 // Install Service Worker
 self.addEventListener("install", (event) => {
-  console.log("[Service Worker] Installing...");
+  console.log("[Service Worker] Installing v3...");
+  self.skipWaiting(); // Force activate immediately
   event.waitUntil(
-    caches
-      .open(CACHE_NAME)
-      .then((cache) => {
-        console.log("[Service Worker] Caching files");
-        return cache.addAll(urlsToCache);
-      })
-      .then(() => {
-        console.log("[Service Worker] Installation complete");
-        return self.skipWaiting();
-      })
-      .catch((error) => {
-        console.error("[Service Worker] Installation failed:", error);
-      })
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log("[Service Worker] Caching files");
+      return cache.addAll(urlsToCache);
+    })
   );
 });
 
-// Activate Service Worker
+// Activate Service Worker & Clean Old Caches
 self.addEventListener("activate", (event) => {
-  console.log("[Service Worker] Activating...");
+  console.log("[Service Worker] Activating v3...");
   event.waitUntil(
-    caches
-      .keys()
-      .then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (cacheName !== CACHE_NAME) {
-              console.log("[Service Worker] Deleting old cache:", cacheName);
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      })
-      .then(() => {
-        console.log("[Service Worker] Activation complete");
-        return self.clients.claim();
-      })
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            console.log("[Service Worker] Deleting old cache:", cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    }).then(() => self.clients.claim())
   );
 });
 
-// Fetch Strategy: Cache First, then Network
+// Fetch Strategy: NETWORK FIRST, then Cache
+// This ensures user always sees latest changes if online.
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        console.log("[Service Worker] Serving from cache:", event.request.url);
-        return cachedResponse;
-      }
-
-      console.log("[Service Worker] Fetching from network:", event.request.url);
-      return fetch(event.request)
-        .then((response) => {
-          // Check if valid response
-          if (
-            !response ||
-            response.status !== 200 ||
-            response.type !== "basic"
-          ) {
-            return response;
-          }
-
-          // Clone response
+    fetch(event.request)
+      .then((response) => {
+        // If valid network response, clone and cache it
+        if (response && response.status === 200 && response.type === 'basic') {
           const responseToCache = response.clone();
-
-          // Cache new response
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, responseToCache);
           });
-
-          return response;
-        })
-        .catch((error) => {
-          console.error("[Service Worker] Fetch failed:", error);
-          // Return offline page if available
-          return caches.match("/offline.html");
-        });
-    })
+        }
+        return response;
+      })
+      .catch(() => {
+        // If network fails, try cache
+        console.log("[Service Worker] Network failed, serving from cache:", event.request.url);
+        return caches.match(event.request);
+      })
   );
 });
