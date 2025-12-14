@@ -4,10 +4,22 @@ window.addEventListener('load', () => {
   if (preloader) {
     // Add fade-out class to trigger CSS transition
     preloader.classList.add('fade-out');
+    
+    // Trigger entrance animations for the page content
+    document.body.classList.add('loaded');
+
     // Remove from DOM/Display after transition
     setTimeout(() => {
         preloader.style.display = 'none';
+        
+        // Backup: Ensure loaded class is added even if race condition occurs
+        if (!document.body.classList.contains('loaded')) {
+             document.body.classList.add('loaded');
+        }
     }, 500); 
+  } else {
+    // Fallback if no preloader exists
+    document.body.classList.add('loaded');
   }
 });
 

@@ -9,17 +9,14 @@
   border-radius: 50px; /* Melengkung Extreem */
   
   /* Visible Ice Blue Gradient (Not Plain White) */
-  background: linear-gradient(
-    145deg, 
-    rgba(255, 255, 255, 0.7) 0%, 
-    rgba(186, 230, 253, 0.7) 100%
-  );
+  /* Plain White as requested - FORCED */
+  background: white !important;
+  opacity: 1 !important;
   
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  /* Blur Removed */
   
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 20px 40px -5px rgba(14, 165, 233, 0.2);
+  border: 1px solid #ffffff; /* Solid white border */
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1); /* Neutral Grey Shadow */
   
   margin-top: -6rem; /* Overlap Hero */
   position: relative;
