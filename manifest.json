@@ -1,13 +1,14 @@
 {
   "name": "Prodi Sistem Informasi UBP Karawang",
   "short_name": "SI UBP",
+  "author": "PutraDev",
   "description": "Website resmi Program Studi Sistem Informasi Fakultas Ilmu Komputer Universitas Buana Perjuangan Karawang",
   "start_url": "/index.html",
   "scope": "/",
   "id": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#ffffff",
-  "theme_color": "#1e40af",
+  "theme_color": "#ffffff",
   "orientation": "portrait-primary",
   "icons": [
     {
