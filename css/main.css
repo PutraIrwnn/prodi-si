@@ -31,6 +31,35 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   .container { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
 }
 
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  z-index: var(--z-navbar);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* PWA Drag Region */
+  app-region: drag;
+  -webkit-app-region: drag;
+}
+
+/* Specific styling for PWA Window Controls Overlay */
+@media (display-mode: window-controls-overlay) {
+  .navbar {
+    padding-top: 1rem; /* Adjust if needed */
+    padding-right: 140px; /* Safe space for Window Controls (Min/Max/Close) on Windows */
+  }
+}
+
+/* Make interactive elements NOT draggable */
+.navbar a, .navbar button, .navbar-logo {
+  app-region: no-drag;
+  -webkit-app-region: no-drag;
+}
+
 /* FIX: Canvas Position */
 #bg-canvas {
   position: fixed;
